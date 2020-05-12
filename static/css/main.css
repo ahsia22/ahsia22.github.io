@@ -82,14 +82,12 @@ a:visited {
 }
 
 div.home {
-  padding: 0 0 30px 0;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
   margin: auto;
 }
 div.about {
-  padding: 0 0 30px 0;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -115,9 +113,6 @@ h3 {
 }
 
 h4 {
-  /*padding-left: 10%;
-  padding-right: 10%;*/
-  padding: 0px 0px 12px 0px;
   position: center;
   text-align:center;
   font-size: 1.5em;
@@ -171,12 +166,17 @@ h4 {
 }
 
 .row_contact {
-  display: flex;
-  flex-wrap: wrap;
   padding-top: 1%;
+  padding-bottom: 1%;
   text-align: center;
   /* margin-left: auto;
   margin-right: auto; */
+}
+
+.contactHeader {
+  padding-left: 45%;
+  width:10%;
+  text-align: center;
 }
 
 /* Clear floats after the columns */
@@ -416,4 +416,40 @@ h4 {
 @-ms-keyframes fadeIn {
 0% {opacity:0;}
 100% {opacity:1;}
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
