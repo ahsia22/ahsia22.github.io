@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block content %}
+   <div class="home">
+    <body> 
+      <div class = "container">
+        
+        <!-- Introduction-->
+        <div class = "row backcolorOffwhite">
+          <div class = "column">
+            <h2> Greetings, I'm Alex! </h2>
+            <p class = "text-left">
+              
+
+              I am a driven and focused Computer Science Engineering Student at the University of Michigan, Ann Arbor.
+              Although I am currently a junior, I plan to graduate with a B.S in Computer Science Engineering in three years, so my expected graduation is May, 2021.
+              <br>
+              <br>
+              I am also an incoming Application Development intern at The Vanguard Group.
+              </p>
+          </div>
+          <div class = "fade-in">
+            <img src = /static/images/alex_photo.jpg class = "profile-pic">        
+          </div>
+        </div>
+      </div>
+
+        <!-- Personal Projects Section-->
+      <div class = "container">
+        <div class = "row_main backcolorWhite">
+          <div class = "columnProject">
+          <h3> What I've Been up to </h3>
+          </div>
+        </div>
+
+        <div class = "row_grid backcolorWhite">
+          <div class = "column_grid">
+            
+            <!-- <img src="/static/images/Umich_stats.jpg" alt="stats_logo"> -->
+
+            <!-- <div class="tile">
+              <img src="/static/images/Umich_stats.jpg" alt="stats_logo">
+              <div class="fadedbox">
+                <div class="title text"> House </div>
+              </div>
+            </div> -->
+
+            <div class="container_tile">
+              <div class = "fade-in">
+                <img src="/static/images/Umich_stats.jpg" class="image_tile">
+              </div>
+              <div class="overlay">
+                <div class="text_tile">Undergraduate Researcher, RTG Project</div>
+                <br>
+                <div class="text_tile_body"> Developed dashboards in R Shiny to generate visualizations from Merit Network's darknet telescope.</div>
+              </div>
+            </div>
+
+
+            <div class="container_tile">
+              <a href = https://lsa.umich.edu/mrads/about-us.html>
+                <div class = "fade-in">
+                  <img src="/static/images/mrads.png" alt="mrads_logo" class = image_tile>
+                </div>
+                <div class="overlay">
+                  <div class="text_tile">Peer Advisor, MRADS Learning Community</div>
+                  <br>
+                  <div class="text_tile_body"> Advised and mentored first-year students in the learning community. </div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+          <div class = "column_grid">
+            <div class="container_tile">
+              <a href = http://www.umich.edu/~rotaract/>
+                <div class = "fade-in">
+                  <img src="/static/images/rotaract.png" alt="rotaract" class = "image_tile_right">
+                </div>
+                <div class="overlay_right">
+                  <div class="text_tile_right"> Volunteer, Rotaract Club</div>
+                </div>
+              </a>
+            </div>
+              <div class = "temp">
+                <a href = "/static/NCUR_Poster_2019.pdf">
+                  <!-- <img class = "static" src = "/static/images/static_heatmap.jpg"> -->
+                  <div class = "fade-in">
+                    <img class = "active" src="/static/images/mirai_heatmap_square.gif" alt="mirai_heatmap" >
+                  </div>
+                  <div class="overlay_gif">
+                    <div class="text_tile_gif"> Research Assistant, Merit Networks </div>
+                    <br>
+                    <div class="text_tile_body"> Developed visualizations depicting internet traffic in Merit Network's darknet telescope.</div>
+                  </div>
+                </a>
+              </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </body>
+   </div>
+ {% endblock %}

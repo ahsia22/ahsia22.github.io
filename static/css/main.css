@@ -1,0 +1,400 @@
+@import "compass/css3";
+
+/* Setting fonts */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica, Roboto, Georgia, Arial, sans-serif";
+  color: #444;
+}
+/*
+ * Formatting the header area
+ */
+header {
+  padding-top: 10px;
+  background-color: #FFDE17;
+  height: 40px;
+  width: 100%;
+  opacity: .8;
+  font-family: "Helvetica, Roboto, Georgia, Arial, sans-serif";
+}
+
+header h1.logo {
+  margin-left: 35px;
+  margin-top: 0;
+  font-size: 1.7em;
+  color: #000000;
+  float: left;
+}
+
+nav {
+  float:right;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li{
+  display: inline-block;
+  margin-left: 70px;
+  margin-right: 35px;
+  padding-top: 0px;
+  position: relative;
+}
+
+/* Hover animation */
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color: #be1e2d;
+  
+  transition: all ease-in-out 250ms;
+}
+
+nav li + li {
+  margin-left: 35px;
+}
+nav li a {
+  text-decoration: none
+}
+
+nav a:hover::before {
+  width:100%;
+}
+
+
+/* Links */
+a:link {
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+div.home {
+  padding: 0 0 30px 0;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  margin: auto;
+}
+div.about {
+  padding: 0 0 30px 0;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  margin: auto;
+}
+
+h2 {
+  /*padding-left: 10%;
+  padding-right: 10%;*/
+  padding: 0px 0px 12px 0px;
+  border-bottom: 4px solid #be1e2d;
+  font-size: 1.5em;
+}
+
+h3 {
+  /*padding-left: 10%;
+  padding-right: 10%;*/
+  padding: 0px 0px 12px 0px;
+  position: center;
+  text-align:center;
+  font-size: 1.5em;
+  border-bottom: 4px solid #be1e2d;
+}
+
+.text-left {
+  padding-right: 10%;
+}
+
+.image-right {
+  padding-left: 10%;
+  width:300px;
+  height:325px;
+}
+
+.column {
+  padding-left: 25%;
+  float: left;
+  position: center;
+  width: 25%;
+}
+
+.columnProject {
+  padding-left: 44.1%;
+  position: center;
+  width: 11.8%;
+}
+
+.column_img {
+  float: left;
+  position: center;
+  width: 25%;
+}
+
+.row {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row_main {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1%;
+  align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.profile-pic{
+  width: 300px;
+  height: 325px;
+  border-radius: 50%;
+}
+
+.row_grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 30%;
+  padding-bottom: 5%;
+}
+
+/* Create two equal columns that sits next to each other */
+.column_grid {
+  width: 25%;
+  padding: 0 5px;
+}
+
+.column_grid img {
+  margin-top: 4px;
+  height: 300px;
+  width: 300px;
+  vertical-align: middle;
+  flex: 50%;
+}
+
+
+.backcolorSeafoam {
+  background-color: #F5FFFA;
+}
+
+
+.backcolorwhite {
+  background-color: #ffffff;
+}
+
+.backcolorOffwhite {
+  background-color: #f1f3f4;
+}
+
+.backcolorMist {
+  background-color: #90AFC5;
+}
+
+/* For the static gif*/
+.static {
+  margin-left: 2%;
+  display: block;
+  height: auto;
+  position:absolute;
+  background: white;
+  opacity: 1;
+}
+
+.active {
+  margin-left: 2%;
+  display: block;
+  height: auto;
+  position:absolute;
+  background: white;
+}
+
+.static:hover {
+  display: block;
+  height: auto;
+  opacity:0;
+}
+
+
+
+
+.container_tile {
+  position: relative;
+  width: 50%;
+}
+
+.image_tile {
+  display: block;
+  width : 250px;
+  height: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.image_tile_right {
+  margin-left: 20%;
+  display: block;
+  width : 250px;
+  height: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.overlay_right {
+  margin-left: 23%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: auto;
+  width: 228%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #1c93d2;
+}
+
+.container_tile:hover .overlay_right {
+  opacity: 0.8;
+}
+
+.text_tile_right {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.temp .overlay_gif {
+  margin-left: 2%;
+  position: absolute;
+  height: 42%;
+  width: 19.7%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #1c93d2;
+}
+
+
+.temp {
+
+}
+.temp:hover .overlay_gif {
+  opacity: 0.8;
+}
+
+.text_tile_gif {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 226%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #1c93d2;
+}
+
+.container_tile:hover .overlay {
+  opacity: 0.8;
+}
+
+.text_tile {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text_tile_body {
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+
+
+/* Fade in Image */
+
+.fade-in {
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+
+}
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
