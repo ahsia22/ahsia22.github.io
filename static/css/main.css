@@ -160,6 +160,15 @@ h3 {
   margin-right: auto;
 }
 
+.row_contact {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
