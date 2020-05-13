@@ -1,140 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
   <head>
     <title>Alex's Website</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="static/css/main.css" type = "text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/animate.css">
     <script src="https://kit.fontawesome.com/cbf41cedd0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
   </head>
 
   <div class="home">
-    <body> 
+    <body>
 
       <!-- Navbar -->
-      <header>
-        <div class="container">
-          <h1 class="logo">Alex Hsia</h1>
-          <strong><nav>
-            <ul class="menu">
-              <li><a href="/index.html">Home</a></li>
-              <li><a href="/templates/about.html">About</a></li>
-              <!-- <li><a href="home.html">Home</a></li>
-              <li><a href="about.html">About</a></li> -->
-              <li><a href="#contactMe">Contact Me</a></li>
-            </ul>
-          </nav></strong>
-        </div>
-      </header>
-
-      <div class = "container">
+      <nav class="navbar navbar-expand-sm ml-auto">
+        <!-- Currently sticky option is off, to have sticky option: sticky-top -->
+        <a class="navbar-brand"><h1>Alex Hsia</h1></a>   
         
-        <!-- Introduction-->
-        <div class = "row backcolorOffwhite">
-          <div class = "column">
-            <h2> Greetings, I'm Alex! </h2>
-            <p class = "text-left">
-              
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-              I am a driven and focused Computer Science Engineering Student at the University of Michigan, Ann Arbor.
-              Although I am currently a junior, I plan to graduate with a B.S in Computer Science Engineering in three years, so my expected graduation is May, 2021.
-              <br>
-              <br>
-              I am also an incoming Application Development intern at The Vanguard Group.
-              </p>
-          </div>
-          <div class = "fade-in">
-            <img src = "static/images/alex_photo.jpg" class = "profile-pic">        
-          </div>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item active line_effect">
+              <a class="nav-link" href="index.html" style = "text-decoration:none">Home<span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item line_effect">
+              <a class="nav-link" href="about.html" style = "text-decoration:none">About</a>
+            </li>
+
+            <li class="nav-item line_effect">
+              <a class="nav-link" href="#contactMe" style = "text-decoration:none">Contact</a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
 
-      <!-- Personal Projects Section-->
-      <div class = "container">
-        <div class = "row_main backcolorWhite">
-          <div class = "columnProject">
-          <h3> What I've Been up to </h3>
-          </div>
-        </div>
-
-        <div class = "row_grid backcolorWhite">
-          <div class = "column_grid">
-            
-            <!-- <img src="/static/images/Umich_stats.jpg" alt="stats_logo"> -->
-
-            <!-- <div class="tile">
-              <img src="/static/images/Umich_stats.jpg" alt="stats_logo">
-              <div class="fadedbox">
-                <div class="title text"> House </div>
-              </div>
-            </div> -->
-
-            <div class="container_tile">
-              <div class = "fade-in">
-                <img src="static/images/Umich_stats.jpg" class="image_tile">
-              </div>
-              <div class="overlay">
-                <div class="text_tile">Undergraduate Researcher, RTG Project</div>
+      <section class = "section backcolorOffwhite">
+        <div class = "container">
+          
+          <!-- Introduction-->
+          <div class = "row">
+            <div class = "col-lg">
+              <h2> Greetings From Colorado! </h2>
+              <p class = "text-left mt-1 ml-1">
+                I am a driven and focused Computer Science Engineering Student at the University of Michigan, Ann Arbor.
+                Although I am currently a junior, I plan to graduate with a B.S in Computer Science Engineering in three years, making my expected graduation date in May, 2021.
                 <br>
-                <div class="text_tile_body"> Developed dashboards in R Shiny to generate visualizations from Merit Network's darknet telescope.</div>
+                <br>
+                I am also an incoming Application Development intern at The Vanguard Group.
+                </p>
+            </div>
+            <div class = "col-sm mt-1 ml-1">
+              <div class = "fade-in column">
+                <img src = "static/images/alex_photo.jpg" class = "profile-pic">        
               </div>
             </div>
-
-
-            <div class="container_tile">
-              <a href = https://lsa.umich.edu/mrads/about-us.html>
-                <div class = "fade-in">
-                  <img src="static/images/mrads.png" alt="mrads_logo" class = image_tile>
-                </div>
-                <div class="overlay">
-                  <div class="text_tile">Peer Advisor, MRADS Learning Community</div>
-                  <br>
-                  <div class="text_tile_body"> Advised and mentored first-year students in the learning community. </div>
-                </div>
-              </a>
-            </div>
-
-          </div>
-          <div class = "column_grid">
-            <div class="container_tile">
-              <a href = http://www.umich.edu/~rotaract/>
-                <div class = "fade-in">
-                  <img src="static/images/rotaract.png" alt="rotaract" class = "image_tile_right">
-                </div>
-                <div class="overlay_right">
-                  <div class="text_tile_right"> Volunteer, Rotaract Club</div>
-                </div>
-              </a>
-            </div>
-              <div class = "temp">
-                <a href = "static/NCUR_Poster_2019.pdf">
-                  <!-- <img class = "static" src = "/static/images/static_heatmap.jpg"> -->
-                  <div class = "fade-in">
-                    <img class = "active" src="static/images/mirai_heatmap_square.gif" alt="mirai_heatmap" >
-                  </div>
-                  <div class="overlay_gif">
-                    <div class="text_tile_gif"> Research Assistant, Merit Networks </div>
-                    <br>
-                    <div class="text_tile_body"> Developed visualizations depicting internet traffic in Merit Network's darknet telescope.</div>
-                  </div>
-                </a>
-              </div>
           </div>
         </div>
-      </div>
-      
-      <div class = "row_contact backcolorOffwhite">
-        <a id="contactMe">
-          <div class = "contactHeader">
-            <h4> Contact Info. </h4>
+      </section>
+
+      <section class="section border-t" id="projects">
+        <div class="container">
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-8 text-center">
+              <h3>Projects</h3>
+              <p>
+                <br>
+                Here are some current and past projects and organizations that I have contributed to.</p>
+            </div>
           </div>
-        </a>
-        <p>
-          <a href = "tel: +720 499 7315" class="fas fa-mobile-alt fa-2x hover_tel" style = "text-decoration:none"></a>
-          <a href = "https://www.linkedin.com/in/alexander-hsia" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
-          <a href = "mailto: ahsia@umich.edu" class="far fa-envelope fa-2x" style = "text-decoration:none"></a>
-          <a href = "https://github.com/ahsia22" class="fab fa-github fa-2x" style = "text-decoration:none"></a>
-        </p>
-      </div>
+  
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <a class="link-thumbnail">
+                <h3>Undergraduate Researcher, RTG Project </h3>
+                  <!-- Developed dashboards in R Shiny to generate visualizations from Merit Network's darknet telescope.  -->
+                <img src="static/images/Umich_stats.jpg" alt="stats" class="img-fluid">
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="https://lsa.umich.edu/mrads/about-us.html" class="link-thumbnail">
+                <h3>Peer Advisor, MRADS Learning Community </h3>
+                <img src="static/images/mrads.png" alt="mrads" class="img-fluid">
+              </a>
+            </div>
+  
+            <div class="col-md-4">
+              <a href="http://www.umich.edu/~rotaract/" class="link-thumbnail">
+                <h3> Volunteer, Michigan Rotaract Club </h3>
+                <img src="static/images/rotaract.png" alt="rotaract" class="img-fluid">
+              </a>
+            </div>
+
+            <div class="col-md-4">
+              <a href="static/NCUR_Poster_2019.pdf" class="link-thumbnail">
+                <h3> Research Assistant, Merit Networks, Inc. </h3>
+                <img src="static/images/mirai_heatmap.gif" alt="mirai heatmap" class="img-fluid">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       
+      <section class = "section_small border-t backcolorOffwhite">
+        <div class = "row_contact text-center">
+          <div class="col-md-12">
+            <a id="contactMe">
+              <div class = "contactHeader">
+                <h3> Contact.<br></h3>
+              </div>
+            </a>
+            <p>
+              <br>
+              <br>
+              <a href = "tel: +720 499 7315" class="fas fa-mobile-alt fa-2x hover_tel" style = "text-decoration:none"></a>   
+              <a href = "https://www.linkedin.com/in/alexander-hsia" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>   
+              <a href = "mailto: ahsia@umich.edu" class="far fa-envelope fa-2x" style = "text-decoration:none"></a>   
+              <a href = "https://github.com/ahsia22" class="fab fa-github fa-2x" style = "text-decoration:none"></a>
+            </p>
+          </div>
+        </div>
+      </section>
     </body>
   </div>
 </html>
