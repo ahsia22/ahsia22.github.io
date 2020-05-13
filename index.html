@@ -12,13 +12,15 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
   </head>
 
   <div class="home">
     <body>
 
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-sm ml-auto">
+      <nav class="navbar navbar-expand-sm ml-auto sticky-top bottomBorderRedgrad backcolorWhite">
         <!-- Currently sticky option is off, to have sticky option: sticky-top -->
         <a class="navbar-brand"><h1>Alex Hsia</h1></a>   
         
@@ -30,11 +32,11 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item active line_effect">
-              <a class="nav-link" href="index.html" style = "text-decoration:none">Home<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html#intro" style = "text-decoration:none">Home<span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item line_effect">
-              <a class="nav-link" href="about.html" style = "text-decoration:none">About</a>
+              <a class="nav-link" href="#personal_details" style = "text-decoration:none">About</a>
             </li>
 
             <li class="nav-item line_effect">
@@ -44,7 +46,7 @@
         </div>
       </nav>
 
-      <section class = "section backcolorOffwhite">
+      <section class = "section backcolorOffwhite" id = "intro">
         <div class = "container">
           
           <!-- Introduction-->
@@ -60,10 +62,62 @@
                 </p>
             </div>
             <div class = "col-sm mt-1 ml-1">
-              <div class = "fade-in column">
-                <img src = "static/images/alex_photo.jpg" class = "profile-pic">        
+              <div class = "column">
+                <img src = "static/images/alex_photo.jpg" class = "profile-pic">
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class = "section border-t" id = personal_details>
+        <div class = "container">
+          <div class = "row ">
+            
+            <div class = "col-lg text-left mt-1 ml-1">
+              <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Personal Details<br></h2>
+              <p class> I was born in Galveston, Texas in 2000. However, two years later, I moved to Asia due to my parents' international assignments.
+                I spent the next 13 years growing up and moving between countries in Asia until finally returning to the United States for High School in 2015.               
+                <br>
+                <br>
+
+                In my senior year, I chose to venture outside of Colorado to attend the University of Michigan. During my time at Michigan,
+                I've been furthering my interests in Computer Science and have also worked on research projects dealing with the analysis of internet traffic.
+                Through its challenging coursework and all the other opportunities the university has afforded to me, I have been able to develop and grow tremendously during my time in Ann Arbor.
+
+                <br>
+                <br>
+
+                I am interested in the areas of computer security, and artificial intelligence, especially in its financial applications, such as algorithmic trading. 
+                In my free time, I enjoy running, learning German, and keeping up with the piano. I'm also an avid student of history and make historical models.
+                <br>
+              </p>
+            </div>
+            <div class = "col-sm mt-1 ml-1">
+              <div class = "hideme">
+                <figure class = "figure">
+                  <img src = "static/images/word_chart_new.jpg" class = "word-chart img-fluid fadeIn">
+                  <figcaption class="figure-caption text-center"> Tag cloud generated from my learning community.</figcaption>
+                </figure>
+              </div>
+            </div>
+
+              
+          </div>
+        </div>
+      </section>
+
+      <section class = "section backcolorNicewhite">
+        <div class = "container">
+          <div class = "row text-center">
+            <div class="col-md-12 text-center">
+              <h3>The Places I've Lived<br></h3>
+              <br>
+              <div class = "hideme">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=16lcje6gs2uvKm-t3ixgoccvhaeKEdM7z" width="640" height="480"></iframe>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -80,58 +134,91 @@
           </div>
   
           <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 hideme">
               <a class="link-thumbnail">
                 <h3>Undergraduate Researcher, RTG Project </h3>
                   <!-- Developed dashboards in R Shiny to generate visualizations from Merit Network's darknet telescope.  -->
-                <img src="static/images/Umich_stats.jpg" alt="stats" class="img-fluid">
+                <img src="static/images/Umich_stats.jpg" alt="stats" class="img-fluid fadeIn">
               </a>
             </div>
-            <div class="col-md-4">
-              <a href="https://lsa.umich.edu/mrads/about-us.html" class="link-thumbnail">
+            <div class="col-md-4 hideme">
+              <a href="https://lsa.umich.edu/mrads/about-us.html" class="link-thumbnail fadeIn">
                 <h3>Peer Advisor, MRADS Learning Community </h3>
                 <img src="static/images/mrads.png" alt="mrads" class="img-fluid">
               </a>
             </div>
   
-            <div class="col-md-4">
+            <div class="col-md-4 hideme">
               <a href="http://www.umich.edu/~rotaract/" class="link-thumbnail">
                 <h3> Volunteer, Michigan Rotaract Club </h3>
-                <img src="static/images/rotaract.png" alt="rotaract" class="img-fluid">
+                <img src="static/images/rotaract.png" alt="rotaract" class="img-fluid fadeIn fadeIn">
               </a>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 hideme">
               <a href="static/NCUR_Poster_2019.pdf" class="link-thumbnail">
                 <h3> Research Assistant, Merit Networks, Inc. </h3>
-                <img src="static/images/mirai_heatmap.gif" alt="mirai heatmap" class="img-fluid">
+                <img src="static/images/mirai_heatmap.gif" alt="mirai heatmap" class="img-fluid fadeIn">
               </a>
             </div>
 
           </div>
         </div>
       </section>
+
+      <!-- Counters -->
+      <div class = "row_contact text-center">
+        <div class = "counting-sec red_grad_bgd">
+          <div class = "inner-width">
+            <div class="col-md-3 col_fact">
+              <div class = "num">3.84</div>
+              Grade Point Avg.
+            </div>
+            <div class="col-md-3 col_fact">
+              <div class = "num">8</div>
+              Languages I'm Familiar in Programming
+              <!-- Java, Python, C++, C, SQL, GoLang, MATLAB, R -->
+            </div>
+            <div class="col-md-3 col_fact">
+              <div class = "num">24</div>
+              Number of Minutes for me to run a 5K
+            </div>
+            <div class="col-md-3 col_fact">
+              <div class = "num">27</div>
+              Number of Model Figures Painted
+            </div>
+          </div>  
+        </div>
+        
+        </div>
+      </div>
 
       
       <section class = "section_small border-t backcolorOffwhite">
         <div class = "row_contact text-center">
           <div class="col-md-12">
             <a id="contactMe">
-              <div class = "contactHeader">
-                <h3> Contact.<br></h3>
+              <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                  <h3>Contact</h3>
+                  <p>
+                    <br>
+                    Let's keep in touch!<br><br>
+                    <a href = "tel: +720 499 7315" class="fas fa-mobile-alt fa-2x hover_tel" style = "text-decoration:none"></a>   
+                    <a href = "https://www.linkedin.com/in/alexander-hsia" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>   
+                    <a href = "mailto: ahsia@umich.edu" class="far fa-envelope fa-2x" style = "text-decoration:none"></a>   
+                    <a href = "https://github.com/ahsia22" class="fab fa-github fa-2x" style = "text-decoration:none"></a>
+                  </p>
+                </div>
               </div>
             </a>
-            <p>
-              <br>
-              <br>
-              <a href = "tel: +720 499 7315" class="fas fa-mobile-alt fa-2x hover_tel" style = "text-decoration:none"></a>   
-              <a href = "https://www.linkedin.com/in/alexander-hsia" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>   
-              <a href = "mailto: ahsia@umich.edu" class="far fa-envelope fa-2x" style = "text-decoration:none"></a>   
-              <a href = "https://github.com/ahsia22" class="fab fa-github fa-2x" style = "text-decoration:none"></a>
-            </p>
           </div>
         </div>
       </section>
+
+      <script type = "text/javascript">
+        $(".num").counterUp({delay: 10, time: 1000});
+      </script>
     </body>
   </div>
 </html>
