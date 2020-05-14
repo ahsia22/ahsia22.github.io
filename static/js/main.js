@@ -10,6 +10,7 @@ $('.count').each(function () {
     });
 });
 
+
 $(document).ready(function() {
     
     /* Every time the window is scrolled ... */

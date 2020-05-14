@@ -18,6 +18,24 @@
 
   <div class="home">
     <body>
+      <div id="loader"></div>
+
+      <!-- Loader animation -->
+      <script> 
+        document.onreadystatechange = function() { 
+            if (document.readyState !== "complete") { 
+                document.querySelector( 
+                  "body").style.visibility = "hidden"; 
+                document.querySelector( 
+                  "#loader").style.visibility = "visible"; 
+            } else { 
+                document.querySelector( 
+                  "#loader").style.display = "none"; 
+                document.querySelector( 
+                  "body").style.visibility = "visible"; 
+            } 
+        }; 
+    </script> 
 
       <!-- Navbar -->
       <nav class="navbar navbar-expand-sm ml-auto sticky-top bottomBorderRedgrad backcolorWhite">
@@ -215,6 +233,7 @@
           </div>
         </div>
       </section>
+
 
       <script type = "text/javascript">
         $(".num").counterUp({delay: 10, time: 1000});
