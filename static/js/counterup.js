@@ -6,6 +6,7 @@
 *
 * Date: Nov 26, 2013
 */
+
 (function( $ ){
   "use strict";
 
@@ -14,7 +15,7 @@
     // Defaults
     var settings = $.extend({
         'time': 400,
-        'delay': 10
+        'delay': 100
     }, options);
 
     return this.each(function(){
@@ -72,10 +73,37 @@
 
             // Start the count up
             setTimeout($this.data('counterup-func'), $settings.delay);
+            
         };
+
+        // function isElementInViewport(elem) {
+        //     var $elem = $(elem);
+        
+        //     // Get the scroll position of the page.
+        //     var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+        //     var viewportTop = $(scrollElem).scrollTop();
+        //     var viewportBottom = viewportTop + $(window).height();
+        
+        //     // Get the position of the element on the page.
+        //     var elemTop = Math.round( $elem.offset().top );
+        //     var elemBottom = elemTop + $elem.height();
+        
+        //     return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+        // }
+
+        // var $elem = $('.bar .level');
+
+
+
         // Perform counts when the element gets into view
-        $this.waypoint(counterUpper, { offset: '100%', triggerOnce: true });
+        $this.waypoint(function() {
+            counterUpper();
+            this.destroy();
+            }, { offset: '100%', triggerOnce: true});
+
     });
+
+
 
   };
 
