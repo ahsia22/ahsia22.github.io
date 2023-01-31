@@ -1,244 +1,649 @@
 <!DOCTYPE html>
-<html lang = "en">
-  <head>
-    <title>Alex's Website</title>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="static/css/main.css" type = "text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="static/css/bootstrap.css">
-    <link rel="stylesheet" href="static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/animate.css">
-    <script src="https://kit.fontawesome.com/cbf41cedd0.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="static/js/main.js"></script>
-    <script type="text/javascript" src="static/js/counterup.js"></script>
-    <script type="text/javascript" src="static/js/waypoints.js"></script>
-    <link rel="shortcut icon" href="static/images/logo-favicon-32x32.png" type="image/x-icon">
-  </head>
+<html>
+    <head>
+        <title>MRC</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/main.css" type = "text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <link rel="stylesheet" href="static/css/bootstrap.css">
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/animate.css">
+        <script src="https://kit.fontawesome.com/cbf41cedd0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="static/js/main.js"></script>
+        <script type="text/javascript" src="static/js/counterup.js"></script>
+        <script type="text/javascript" src="static/js/waypoints.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script> 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168360966-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-  <div class="home">
-    <body>
-      <div id="loader"></div>
+          gtag('config', 'UA-168360966-1');
+        </script>
 
-      <!-- Loader animation -->
-      <script> 
-        document.onreadystatechange = function() { 
-            if (document.readyState !== "complete") { 
-                document.querySelector( 
-                  "body").style.visibility = "hidden"; 
-                document.querySelector( 
-                  "#loader").style.visibility = "visible"; 
-            } else { 
-                document.querySelector( 
-                  "#loader").style.display = "none"; 
-                document.querySelector( 
-                  "body").style.visibility = "visible"; 
-            } 
-        }; 
-    </script> 
+      </head>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-sm ml-auto sticky-top bottomBorderRedgrad backcolorWhite">
-        <!-- Currently sticky option is off, to have sticky option: sticky-top -->
-        <a class="navbar-brand"><h1>Alex Hsia</h1></a>   
-        
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    
+      <div ng-app = "" ng-init = "name = 'MRC'" class="home">
+        <body>
+          <!-- <div id="loader"></div> -->
+    
+          <!-- Loader animation
+          <script> 
+            document.onreadystatechange = function() { 
+                if (document.readyState !== "complete") { 
+                    document.querySelector( 
+                      "body").style.visibility = "hidden"; 
+                    document.querySelector( 
+                      "#loader").style.visibility = "visible"; 
+                } else { 
+                    document.querySelector( 
+                      "#loader").style.display = "none"; 
+                    document.querySelector( 
+                      "body").style.visibility = "visible"; 
+                } 
+            }; 
+          </script>  -->
+    
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-sm ml-auto sticky-top bottomBorderRedgrad backcolorWhite">
+            <!-- Currently sticky option is off, to have sticky option: sticky-top -->
 
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item active line_effect">
-              <a class="nav-link" href="index.html#intro" style = "text-decoration:none">Home<span class="sr-only">(current)</span></a>
-            </li>
-
-            <li class="nav-item line_effect">
-              <a class="nav-link" href="#personal_details" style = "text-decoration:none">About</a>
-            </li>
-
-            <li class="nav-item line_effect">
-              <a class="nav-link" href="#contactMe" style = "text-decoration:none">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <section class = "section backcolorOffwhite" id = "intro">
-        <div class = "container">
-          
-          <!-- Introduction-->
-          <div class = "row">
-            <div class = "col-lg">
-              <h2> Greetings From Colorado! </h2>
-              <p class = "text-left mt-1 ml-1">
-                I am a driven and focused Computer Science Engineering Student at the University of Michigan, Ann Arbor.
-                I plan to graduate with a B.S in Computer Science Engineering in May of 2021, within three years.
-                <br>
-                <br>
-                I am also an incoming Application Development intern at The Vanguard Group.
-                </p>
-            </div>
-            <div class = "col-sm mt-1 ml-1">
-              <div class = "column">
-                <img src = "static/images/alex_photo.jpg" class = "profile-pic">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class = "section border-t" id = personal_details>
-        <div class = "container">
-          <div class = "row ">
+            <img src = "static/images/MRC.png" class = "img-fluid" style="width: 80px; height: 80px; border-radius: 40px; margin-right: 50px">
+            <a class="navbar-brand" style="margin-right: 10px">
+              <h1 ng-bind = "name"></h1>
+            </a>   
             
-            <div class = "col-lg text-left mt-1 ml-1">
-              <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Personal Details<br></h2>
-              <p class> I was born in Galveston, Texas in 2000. At the age of two, I moved to Asia due to my parents' international assignments.
-                I spent the next 13 years growing up and moving between countries in Asia until finally returning to the United States during High School in 2015.               
-                <br>
-                <br>
+            <!-- Toggler/collapsibe Button -->
+            
+            </li border-right="1px solid">
 
-                In my senior year, I chose to venture outside of Colorado to attend the University of Michigan. During my time at Michigan,
-                I've been furthering my interests in Computer Science and have also worked on research projects dealing with the analysis of internet traffic.
-                Through its challenging coursework and all the other opportunities the university has afforded to me, I have been able to develop and grow tremendously during my time in Ann Arbor.
-
-                <br>
-                <br>
-
-                I am interested in the areas of computer security, and artificial intelligence, especially in its financial applications, such as algorithmic trading. 
-                In my free time, I enjoy running, learning German, and keeping up with the piano. I'm also an avid student of history and make historical models.
-                <br>
-              </p>
-            </div>
-            <div class = "col-sm mt-1 ml-1">
-              <div class = "hideme">
-                <figure class = "figure">
-                  <img src = "static/images/word_chart_new.jpg" class = "word-chart img-fluid fadeIn">
-                  <figcaption class="figure-caption text-center"> Tag cloud generated from my learning community.</figcaption>
-                </figure>
-              </div>
-            </div>
-
-              
-          </div>
-        </div>
-      </section>
-
-      <section class = "section backcolorNicewhite">
-        <div class = "container">
-          <div class = "row text-center">
-            <div class="col-md-12 text-center">
-              <h3>The Places I've Lived<br></h3>
-              <br>
-              <div class = "hideme">
-                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=16lcje6gs2uvKm-t3ixgoccvhaeKEdM7z" width="640" height="480"></iframe>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section class="section border-t" id="projects">
-        <div class="container">
-          <div class="row justify-content-center mb-5">
-            <div class="col-md-8 text-center">
-              <h3>Projects</h3>
-              <p>
-                <br>
-                Here are some current and past projects and organizations I have contributed to.</p>
-            </div>
-          </div>
-  
-          <div class="row no-gutters">
-            <div class="col-md-4 hideme">
-              <a class="link-thumbnail">
-                <h3>Undergraduate Researcher, RTG Project </h3>
-                  <!-- Developed dashboards in R Shiny to generate visualizations from Merit Network's darknet telescope.  -->
-                <img src="static/images/Umich_stats.jpg" alt="stats" class="img-fluid fadeIn">
-              </a>
-            </div>
-            <div class="col-md-4 hideme">
-              <a href="https://lsa.umich.edu/mrads/about-us.html" class="link-thumbnail fadeIn">
-                <h3>Peer Advisor, MRADS Learning Community </h3>
-                <img src="static/images/mrads.png" alt="mrads" class="img-fluid">
-              </a>
-            </div>
-  
-            <div class="col-md-4 hideme">
-              <a href="http://www.umich.edu/~rotaract/" class="link-thumbnail">
-                <h3> Volunteer, Michigan Rotaract Club </h3>
-                <img src="static/images/rotaract.png" alt="rotaract" class="img-fluid fadeIn fadeIn">
-              </a>
-            </div>
-
-            <div class="col-md-4 hideme">
-              <a href="static/NCUR_Poster_2019.pdf" class="link-thumbnail">
-                <h3> Research Assistant, Merit Networks, Inc. </h3>
-                <img src="static/images/mirai_heatmap.gif" alt="mirai heatmap" class="img-fluid fadeIn">
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Counters -->
-      <div class = "row_contact text-center">
-        <div class = "counting-sec red_grad_bgd">
-          <div class = "inner-width">
-            <div class="col-md-3 col_fact">
-              <div class = "num">3.84</div>
-              Grade Point Avg.
-            </div>
-            <div class="col-md-3 col_fact">
-              <div class = "num">8</div>
-              Languages I'm Familiar in Programming
-              <!-- Java, Python, C++, C, SQL, GoLang, MATLAB, R -->
-            </div>
-            <div class="col-md-3 col_fact">
-              <div class = "num">24</div>
-              Minutes for me to run a 5K
-            </div>
-            <div class="col-md-3 col_fact">
-              <div class = "num">27</div>
-              Number of Model Figures Painted
-            </div>
-          </div>  
-        </div>
-        
-        </div>
-      </div>
-
-      <!-- Making a call to the counterup function -->
-      <script type = "text/javascript">
-        $(".num").counterUp({delay: 10, time: 1000});
-      </script>
-
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
       
-      <section class = "section_small border-t backcolorOffwhite">
-        <div class = "row_contact text-center">
-          <div class="col-md-12">
-            <a id="contactMe">
-              <div class="row justify-content-center mb-5">
-                <div class="col-md-8 text-center">
-                  <h3>Contact</h3>
-                  <p>
-                    <br>
-                    Let's keep in touch!<br><br>
-                    <a href = "tel: +720 499 7315" class="fas fa-mobile-alt fa-2x hover_tel" style = "text-decoration:none"></a>   
-                    <a href = "https://www.linkedin.com/in/alexander-hsia" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>   
-                    <a href = "mailto: ahsia@umich.edu" class="far fa-envelope fa-2x" style = "text-decoration:none"></a>   
-                    <a href = "https://github.com/ahsia22" class="fab fa-github fa-2x" style = "text-decoration:none"></a>
-                  </p>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                  <li class="nav-item active line_effect">
+                    <a class="nav-link"  href="index.html#intro" style = "text-decoration:none">Home<span class="sr-only">(current)</span></a>
+                  </li>
+
+                  <li class="nav-item line_effect">
+                    <a class="nav-link" href="#models" style = "text-decoration:none">Interactive Models</a>
+                  </li>
+
+                  <li class="nav-item line_effect">
+                    <a class="nav-link" href="#method" style = "text-decoration:none">Methodology</a>
+                  </li>
+
+                  <li class="nav-item dropdown line_effect">
+                    <a class="nav-link dropdown-toggle" href="#ds" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Data Sources
+                    </a>
+                    <div class = "dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <a class = "dropdown-item" href = "#env">Environment</a>
+                      <a class = "dropdown-item" href = "#pollut">Pollution</a>
+                      <a class = "dropdown-item" href = "#dis">Health</a>
+                      <a class = "dropdown-item" href = "#dem">Ethnicity and Communities</a>
+                      <a class = "dropdown-item" href = "#gov">Government Action</a>
+                    </div>
+                  </li>
+      
+                  <li class="nav-item line_effect">
+                    <a class="nav-link" href="#citation" style = "text-decoration:none">Citations</a>
+                  </li>
+
+                  <li class="nav-item line_effect">
+                    <a class="nav-link" href="#contact" style = "text-decoration:none">The Team</a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
+          </nav>
+          
+          <section class = "section backcolorMist red_grad_bgd" id = "intro">
+            <div class = "container">
+              <!-- Introduction-->
+              <div class = "row">
+                <div class = "col-lg">
+                  <h2 style="color: white"> Project Prometheus </h2>
+                  <p class = "text-left mt-1 ml-1" style="color: white">
+
+                    The purpose of Project Prometheus is to predict the areas of the U.S. (and globally, in the future) which will be most affected by Coronavirus by utilizing machine learning tools.
+                    By forecasting future severity rates (via our "Hotspot index"), it allows us to better balance government intervention and economic activity to minimize the negative impact to communities.
+                    <!-- The purpose of the Project Prometheus is to predict the areas most impacted by coronavirus in the future by utilizing machine learning with a collection of satellite and earth-based data. -->
+                    </p>
+                </div>
+              </div>               
+
+            </div>
+          </section>
+          <section class = "section backcolorNicewhite" id = "models">
+            <div class = "container mb-1">
+              <div class = "row text-center mb-5">
+                <div class="col-md-12 text-center">
+                  <h3 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Interactive Models <br> </h3>
+                  <br>
+                  <br>
+                  <br>
+
+                  <h5> Interactive MAP of Hotspot Index from LSTM Model Prediction</h5>
+                  <br>
+                  <br>
+                  <br>
+                  <!-- Insert Interactive Map -->
+
+                  <div id='interactive-map' style="height:500px">
+                    <script src='us_states.js'></script>
+                    <script src='test_save.js'></script>
+                    <script type='text/javascript' src= 'js_experiment.js'></script>
+                  </div>
+                  <br>
+                  <p class="figure-caption text-center">The above graph shows the model's prediction of hotspot index (a metric we created to describe how much of a hotspot a county is) on 05/27/2020, using data from 05/06/2020-05/20/2020.</p>
+                  <br>
+                  <br>
+                  <br>
+
+                  <h5> Interactive 3D Model of Coronavirus </h5>
+                  <br>
+                  <br>
+                  <br>
+                  <!-- Coronavirus Interactive Model -->
+
+                  <div style= "height:500px; width: 100%; align-content: center; padding-bottom: 80px">
+                    <!-- If not working, turn off any adblockers and/or try using a different browser -->
+                    <iframe src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
+                    <p class="figure-caption text-center"> Interactive 3D model of Coronavirus. Note: This model was sourced from Biodigital.</p>
+                  </div>
+                  
+                  <h5> Factor Importance - Pertubation Results </h5>
+
+                  <figure class = "figure">
+                    <img src = "static/images/pert_14_7_single.png" class = "img-fluid fadeIn">
+                    <figcaption class="figure-caption text-center"> This pie chart shows the perturbation effect for each of the feature as a percentage of the total sum of effects. The perturbation is done by adding each feature to a random distribution between 0 and 0.2. The higher the percentage, the higher the error will increase when the feature is perturbed, which might imply more importance to the model's prediction.</figcaption>
+                  </figure>
+
+                  <h5> Factor Importance - Permutation Results </h5>
+                  <figure class = "figure">
+                    <img src = "static/images/perm_14_7_single.png" class = "img-fluid fadeIn">
+                    <figcaption class="figure-caption text-center"> This pie chart shows the permutation effect for each of the feature as a percentage of the toal sum of effects. The permutation is done by randomly shuffling each feature. The higher the percentage, the higher the error will increase when the feature is permuted, which might imply more importance to the model's prediction.</figcaption>
+                  </figure>
                 </div>
               </div>
-            </a>
+            </div>
+          </section>
+
+           <section class = "section border-t" id = method>
+            <div class = "container">
+              <div class = "row ">
+                
+                <div class = "col-lg text-left mt-1 ml-1 text-center">
+                  <h3 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Methodology <br></h3>
+                  <br>
+                  <br>
+                  <figure class = "figure">
+                    <img src = "workflow_chart_total.png" class = "img-fluid fadeIn">
+                    <figcaption class="figure-caption text-center"> A flowchart depicting data sources and our process of creating the model and the interactive choropleth. Steps containing data from NASA/JAXA and other space agencies are filled in green, while boxes using data only from non-NASA data sources are filled in blue.. </figcaption>
+                  </figure>
+
+
+
+
+                  <br>
+                  <br>
+                  <br>
+                  <p class>
+
+
+                    Our first major task was to process NASA, JAXA, and other open source data containing measurements regarding temperature, precipitation, night light radiance, etc. across a collection of portals and file formats (h5, hd5, he5, tiff, csv).
+                    Once the data was read in with Python, we merged the different data frames into a single, standardized Pandas Dataframe, containing 40+ features.
+                    <br>
+                    <br>
+                    After merging the data together, it was "cleaned" by filling in all missing values with the "next available data."
+                    Following the data cleaning process, it was split into training and evaluation/testing subsets (80% and 20%, respectively).
+                    Next, hyperparameters for the model such as the training batch size and number of epoxes (number of times the model iterates through the dataset) were set.
+
+                    The model was then specified to utilize the previous two week's worth (seven days) of input to predict a day's "hot spot index," a week into the future.
+
+                    This "hot spot index" is a number that we, as a team, defined, aiming to characterize into the infectivity, lethality, and overall spread of the virus.
+
+                    The hotspot index for a county is defined as follows:
+                    <br>
+                    <br>
+                    HotSpot Index = ln ((IR) * 0.003 + (MR) * 0.003 + GP * 0.002 + ln(C + 1) * 0.002 + 1))
+                    <br>
+                    <br>
+                    IR = Incidence rate (cases per 100,000 people)
+                    <br>
+                    MR = Mortality Rate (Deaths in county / Population in county)
+                    <br>
+                    GP = Growth Percentage (New cases / Past total cases)
+                    <br>
+                    C = Total Confirmed Cases up to Yesterday
+
+                    <br>
+                    <br>
+                    Where 0.003, 0.002, and 1 are hard-coded inputs to the model.
+
+                    A Long Short Term Memory (LSTM) model from Tensorflow was then used to train and test the model.
+
+                    Below is a list of all the features used to train our model:
+                    <br>
+                    <br>
+                    <code>['FIPS', 'Confirmed', 'Deaths', 'Population', 'IncidenceRate',
+                    'NewCases', 'MortalityRate', 'LST_Day', 'LST_Night',
+                    'Mask Mandates', 'Stay-at-Home Orders', 'Travel Restrictions',
+                    'Precipitation', 'UV Index',
+                    'retail_and_recreation_percent_change_from_baseline',
+                    'grocery_and_pharmacy_percent_change_from_baseline',
+                    'parks_percent_change_from_baseline',
+                    'transit_stations_percent_change_from_baseline',
+                    'workplaces_percent_change_from_baseline',
+                    'residential_percent_change_from_baseline', 'Life Expectancy',
+                    '% Adults with Diabetes', '% Uninsured.1',
+                    'Median Household Income', '% 65 and over', '% Black', '% Asian',
+                    '% Native Hawaiian/Other Pacific Islander', '% Hispanic',
+                    '% Non-Hispanic White', '% Rural', '% Fair or Poor Health',
+                    '% Smokers', '% Adults with Obesity', 'Food Environment Index',
+                    'Primary Care Physicians Ratio', '% Vaccinated', '% Some College',
+                    '% Severe Housing Problems', 'ColumnAmountNO2',
+                    'ColumnAmountNO2CloudScreened', 'Night Light', 'Hotspot Index']</code>
+                    <br>
+                    <br>
+
+                    After generating the model's predictions, we plotted the values on LeafletJS to generate the interactive Choropleth map.
+
+                    <h5> Future Work </h5>
+                    <br>
+                    In the future, we will explore more complex models besides LSTM, collect more data to reduce the amount of missing data, and perhaps design and deploy our websites in a more sophisticated manner such as using React.js to make the website dynamic. We might also create a pipeline to automatically collect satellite and coronavirus data for each day, update the database and improve the model’s accuracy. For the time being, we hope that our map is a valuable resource for the government and communities, as they can use it as a guide to determine how resources should be best deployed to save lives while maintaining normalcy where possible.
+                  </p>
+                </div>
+
+                <!-- Optional figure if needed -->
+                <!-- <div class = "col-sm mt-1 ml-1">
+                  <div class = "hideme">
+                    <figure class = "figure">
+                      <img src = "" class = "word-chart img-fluid fadeIn">
+                    </figure>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </section>
+
+          <section class = "section border-t " id = env>
+            <div class = "container">
+              <div class = "row ">
+                
+                <div class = "col-lg text-left mt-1 ml-1">
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Environment <br></h2>
+                  <p class> Research done by scientists from China and Harvard University suggest that warmer weather does not halt transmission of the virus, contrary to popular belief. (Powell, 2020).
+                    Utilizing meteorological factors of 122 cities, they concluded that there is no evidence of decline of Coronavirus infection rates when the temperature increases. (Xie, 2020).
+                    These results are particularly concerning, as many governments plan to ease restrictions based on this false assumption. 
+                    <br>
+                    <br>
+                    Furthermore, one may hypothesize that people may rely on this false assumption to guide their decision-making, resulting in "warmer areas" having more relaxed policies/behaviors and less social distancing. 
+                    
+                    <br>
+                    <br>
+
+                    Precipitation data was also included in our model, as seasonal variations in temperature and precipitation (e.g rainfall) as well as
+                    rapid changing weather variability can exert strong pressures on infectious population dynamics. (Chiyomaru and Takemoto, 2020)
+
+                    <br>
+                    <br>
+
+                    Global temperature and UV data was gathered from NASA's MODIS (Moderate Resolution Imaging Spectroradiometer) instrument web data portal.
+                    Global precipitation data was sourced from the Japanese Aerospace Exploration Agency (JAXA) GCOM-W1 (Global Change Observation Mission) Shizuku's AMSR2 (Advanced Microwave Scanning Radiometer), made available on JAXA's G-Portal.
+                    <br>
+                    <br>
+                    In the advent of missing data, we filled missing values with data from the next available time interval.
+                  
+                  </p>
+                </div>
+                <div class = "col-sm mt-1 ml-1">
+                  <div class = "hideme">
+                    <figure class = "figure">
+                      <img src = "static/images/map_temp.png" class = "img-fluid fadeIn">
+                      <figcaption class="figure-caption text-center"> A weather map depicting a day's worth of global temperature data from NASA on 2020-02. Note: The uncolored spots indicate missing data.</figcaption>
+                    </figure>
+
+                    <br>
+                    <figure class = "figure">
+                      <img src = "static/images/map_precip.png" class = "img-fluid fadeIn">
+                      <figcaption class="figure-caption text-center"> A weather map visualizing a day's worth of global precipitation data gathered from JAXA on 2020-01-26. Note: The uncolored spots indicate missing data. </figcaption>
+                    </figure>
+                  </div>
+                </div>                   
+              </div>
+            </div>
+          </section>
+
+          <section class = "section border-t" id = pollut>
+            <div class = "container">
+              <div class = "row ">
+                
+                <div class = "col-lg text-left mt-1 ml-1">
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Pollution <br></h2>
+                  <p class> 
+                     It is a worldwide observation that pollution corresponds positively with economic activity (due to factories and transportation). NO2, or nitrogen dioxide, is a common byproduct of industrial activity which is also harmful to human health.
+                      Areas with higher levels of pollution often also have a greater percentage of the population with preexisting conditions, increasing Coronavirus' severity/lethality.
+                      As a result, NO2 is a good metric for estimating economic activity and measuring the susceptibility of populations in certain regions to Coronavirus.
+                      <br>
+                      <br>
+                      We sourced the NO2 data from OMINO2 (Ozone Monitoring Instrument) and acquired it from the EarthDATA portal.
+                  </p>
+                </div>
+                <div class = "col-sm mt-1 ml-1">
+                  <div class = "hideme">
+                  
+                    <figure class = "figure">
+                      <img src = "static/images/bar_chart.png" class = "img-fluid fadeIn">
+                      <figcaption class="figure-caption text-center"> A bar chart depicting processed NO2 from NASA data on 03-04-2020 of the counties with the highest levels. </figcaption>
+                    </figure>
+                  </div>
+                </div>                  
+              </div>
+            </div>
+          </section>
+
+          <section class = "section border-t backcolorGreen" id = dis>
+            <div class = "container">
+              <div class = "row ">
+                
+                <div class = "col-lg text-left mt-1 ml-1">
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Health <br></h2>
+
+                  <p class> 
+
+                    So far, the inputs to the machine learning model have been based on scientific observations/measurements. This section gathers statistics directly tied to health records including historical number of cases, deaths, incidence rate, new cases, and population per county into the model. This data is important because it provides a historic/near-present trajectory of the number of cases and deaths.
+
+
+                  This information was collected by Johns Hopkins University's COVID-19 "USCounties_time" records.
+
+                    <br>
+                    <br>
+                    Additional health information such as life expectancy, poor mental health days was also included in our model, gathered from the Robert Wood Johnson Foundation program, a large philanthropic foundation.
+
+                  </p>
+                </div>
+                <div class = "col-sm mt-1 ml-1">
+                  <div class = "hideme">
+                    <figure class = "figure">
+                      <img src = "static/images/diabetes.png" class = "img-fluid fadeIn">
+                    </figure>
+                  </div>
+                </div>                  
+              </div>
+            </div>
+          </section>
+
+          <section class = "section border-t" id = dem>
+            <div class = "container">
+              <div class = "row ">
+                
+                <div class = "col-lg text-left mt-1 ml-1">
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Ethnicity and Communities <br></h2>
+                  <p class> 
+
+                    It is a widely accepted fact that Coronavirus does not affect every community the same way.                    
+                    Minorities, especially African-Americans, have an on-average higher death rate compared to other races.
+                    “African American persons (92.3 deaths per 100,000 population) and Hispanic/Latino persons (74.3) that were substantially higher than that of white (45.2) or Asian (34.5) persons.”(IHME, 2020). 
+                    This trend may be attributed to their living conditions and neighborhoods. As they tend to reside in more densely populated areas and are thus may be more susceptible to transmission, making it hard to social distance people from one another. 
+                    In addition, most of the professions that the minority communities have does not include health insurance or paid time off making it very hard for them to seek treatment. (CDC).
+                    As a result, social demographics play an important role in identifying hot spots.
+
+                    <br>
+                    <br>
+
+                    In addition to race, we also sourced data for %rural, % severe housing problems, % ethnicities, etc. and fed it into our model. We sourced this information from the Robert Wood Johnson Foundation program.
+
+                    <br>
+                    <br>
+
+                    To better understand population concentrations, we gathered night light satellite data from NASA's Suomi-NPP's (National Polar-orbiting Partnership) VIIRS (Visible Infrared Imaging Radiometer Suite) instrument from the month of January 2020. This data was also fed into the final model.
+                    We also used mobility data from Google to supplement the information to better understand human movements and activities.
+                  </p>
+                </div>
+                <div class = "col-sm mt-1 ml-1">
+                  <br>
+                  <br>
+                  <div class = "hideme">
+                    <figure class = "figure">                      
+                      <!-- <img src = "Teamlogo.png" class = "word-chart img-fluid fadeIn"> -->
+                      <img src = "static/images/nasa-worldview-2020-02-18T00_00Z-to-2020-03-26T00_00Z.gif" class = "img-fluid fadeIn">
+                      <figcaption class="figure-caption text-center"> A time lapse generated from daily night light captures (2020-02-18 2020-03-26), created from NASA's Worldview. </figcaption>
+                    </figure>
+                  </div>
+                </div>                  
+              </div>
+            </div>
+          </section>
+
+          <section class = "section border-t" id = gov>
+            <div class = "container">
+              <div class = "row ">
+                
+                <div class = "col-lg text-left mt-1 ml-1">
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Government Action <br></h2>
+                  <p class>  In the U.S., States are slowly re-opening the economy, with Georgia being one of the first.
+                    However, health officials are afraid that opening up the states too quickly may result in a much-feared second or third wave of cases. 
+                    A good case study is Japan. Their initial rigorous restrictions kept their number of cases low. However, after lifting the restrictions too quickly they were forced to shut down a second time due to a second wave of coronavirus cases. (Leonard, 2020).
+                    To minimize economic damage, many governors "overlook" some of the guidlines for reopening. 31 out of the 50 states have already begun to partially reopen the economy, causing a resurgence in deaths and infections from Coronavirus. 
+
+                    We sourced government action data from multistate.us, an organization which provides a COVID-19 Policy data at the state level.
+
+                    <br>
+                    <br>
+
+                     
+                    Thus, government action data are an important input to the model.
+                  </p>
+                </div>
+                <div class = "col-sm mt-1 ml-1">
+                  <div class = "hideme">
+                    <figure class = "figure">
+                      <img src = "Open.png" style="width:80%; height:80%;" class = "img-fluid fadeIn"> 
+                      <figcaption class="figure-caption text-center"> Figure depicting states open/closed/restrictions. </figcaption>
+                      <!-- <br> -->
+                      <!-- <img src = "Status.png" style="width:66%; height:66%;" class = "img-fluid fadeIn"> -->
+                    </figure>
+                  </div>
+                </div>                  
+              </div>
+            </div>
+          </section>
+          
+
+
+          <section class = "section border-t">
+            <div class = "row_contact text-center">
+              <div class="col-md-12">
+                <a id="citation">
+                  <div class="row justify-content-center mb-5">
+                    <div class="col-md-8 text-center">
+                      <h3>Citations</h3>
+                      <br>
+                      <br>
+                      
+                      <p>
+                        <br>
+                          Adams, M. (2020, August 3). Early Release - Population-Based Estimates of Chronic Conditions Affecting Risk for Complications from Coronavirus Disease, United States - Volume 26, Number 8-August 2020 - Emerging Infectious Diseases journal - CDC. Retrieved May 30, 2020, from https://wwwnc.cdc.gov/eid/article/26/8/20-0679_article
+                        <br>
+                        <br>
+                          Berrick, S. (2004, October 1). Earthdata Search. Retrieved May 30, 2020, from https://search.earthdata.nasa.gov/search/granules?p=C1266136111-GES_DISC;
+                        <br>
+                        <br>
+                          Berrick, S. (2020, May 30). Find Environmental Impacts Data. Retrieved May 30, 2020, from https://earthdata.nasa.gov/learn/pathfinders/covid-19/environmental-impacts;
+                        <br>
+                          Berrick, S. (2020, May 12). Find Seasonality Data. Retrieved May 30, 2020, from https://earthdata.nasa.gov/learn/pathfinders/covid-19/seasonality;
+                        <br>
+                        <br>
+                          E. (Ed.). (2020, May 18). JHU Centers for Civic Impact Covid-19 County Cases (Daily Update). Retrieved May 30, 2020, from https://coronavirus-resources.esri.com/datasets/4cb598ae041348fb92270f102a6783cb/data?layer=1;
+                        <br>
+                        <br>
+                          G. (2020). COVID-19 Community Mobility Report. Retrieved May 30, 2020, from https://www.google.com/covid19/mobility/;
+                        <br>
+                        <br>
+                          IHME: COVID-19 Projections. (2020, May 26). Retrieved May 29, 2020, from https://covid19.healthdata.org/united-states-of-america;
+                        <br>
+                        <br>
+                          J. (Ed.). (2020, May 27). Mortality Analyses. Retrieved May 30, 2020, from https://coronavirus.jhu.edu/data/mortality;
+                        <br>
+                        <br>
+                          Jari Hovila, Antii Arola, and Johanna Tamminen (2014), OMI/Aura Surface UVB Irradiance and Erythemal Dose Daily L2 Global Gridded 0.25 degree x 0.25 degree V3, NASA Goddard Space Flight Center, Goddard Earth Sciences Data and Information Services Center (GES DISC), Accessed: [Data Access Date], 10.5067/Aura/OMI/DATA2028;
+                        <br>
+                        <br>
+                          Levy, R. (2019, May 16). Earth at Night (Black Marble) 2016 Grayscale Maps. Retrieved May 30, 2020, from https://visibleearth.nasa.gov/images/144897/earth-at-night-black-marble-2016-grayscale-maps
+                        <br>
+                        <br>
+                          Leonard, A. (2020, April 24). Hokkaido Forced to Reinstate Lockdown After Coronavirus Returned. Retrieved May 29, 2020, from https://time.com/5826918/hokkaido-coronavirus-lockdown/
+                        <br>
+                        <br>
+                        Lusk, J. (2020, May 01). NGF: Only four states remain closed to golf with no announced dates to reopen. Retrieved May 31, 2020, from https://golfweek.usatoday.com/2020/05/01/ngf-only-four-states-closed-golf/
+                        <br>
+                        <br>
+                          N. (Ed.). (2020, April 22). COVID-19 in Racial and Ethnic Minority Groups. Retrieved May 29, 2020, from https://www.cdc.gov/coronavirus/2019-ncov/need-extra-precautions/racial-ethnic-minorities.html
+                        <br>
+                        <br>
+                          T. (2020, April 24). UPDATE State officials say reopening will be regional, data-driven. Retrieved June 01, 2020, from https://www.dailyitem.com/news/local_news/update-state-officials-say-reopening-will-be-regional-data-driven/article_26f4cc1c-8580-11ea-a7ae-f3cb259dd4ac.html
+                        <br>
+                        <br>
+                          Ogden, C. (2017, August 01). Overweight & Obesity Statistics. Retrieved May 30, 2020, from https://www.niddk.nih.gov/health-information/health-statistics/overweight-obesity
+                        <br>
+                        <br>
+                          Pender, J. (2020). Download Data. Retrieved May 30, 2020, from https://www.ers.usda.gov/data-products/county-level-data-sets/download-data/
+                        <br>
+                        <br>
+                          Powell, A. (2020, April 14). Warm weather may have no impact on COVID-19. Retrieved May 29, 2020, from https://news.harvard.edu/gazette/story/2020/04/covid-19-may-not-go-away-in-warmer-weather-as-do-colds/
+                        <br>
+                        <br>
+                          U. (2020). Explore Health Rankings: Rankings Data & Documentation. Retrieved May 30, 2020, from https://www.countyhealthrankings.org/explore-health-rankings/rankings-data-documentation?fbclid=IwAR0sUOv2BU7j4UH8I5EL-g-vt1peVY37ZKQeQ6z94l7DQn6cNNIBw_zaZ00
+                        <br>
+                        <br>
+                          Wan, Z., Hook, S., Hulley, G. (2015). MYD11C1 MODIS/Aqua Land Surface Temperature/Emissivity Daily L3 Global 0.05Deg CMG V006 [Data set]. NASA EOSDIS Land Processes DAAC. Accessed 2020-05-28 from https://doi.org/10.5067/MODIS/MYD11C1.006
+                        <br>
+                        <br>
+                          Xie, J., & Zhu, Y. (2020, July 1). Association between ambient temperature and COVID-19 infection in 122 cities from China. Retrieved May 29, 2020, from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7142675/
+                        <br>
+                          
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+    
+    
+          <!-- Counters -->
+          <div class = "row_contact text-center">
+            <div class = "counting-sec red_grad_bgd">
+              <div class = "inner-width">
+                <div class="col-md-3 col_fact">
+                  <div class = "num">44</div>
+                  Features
+                </div>
+                <div class="col-md-3 col_fact">
+                  <div class = "num">1</div>
+                  Long Short Term Memory Machine Learning Model
+                </div>
+                <div class="col-md-3 col_fact">
+                  <div class = "num">6.275</div>
+                  % Training Error using the past two weeks data to predict a week in advance
+                </div>
+
+                <div class="col-md-3 col_fact">
+                  <div class = "num">9.923</div>
+                  % Evaluation Error using the past two weeks data to predict a week in advance
+                  <!-- Java, Python, C++, C, SQL, GoLang, MATLAB, R -->
+                </div>
+                
+                
+              </div>  
+            </div>
           </div>
-        </div>
-      </section>
-    </body>
-  </div>
+    
+          <!-- Making a call to the counterup function -->
+          <script type = "text/javascript">
+            $(".num").counterUp({delay: 10, time: 1000});
+          </script>
+    
+          <div class = "section container">
+            
+            <div class = "row text-center">
+              <div class = "col" id = "contact">
+                <h3>The Team</h3>
+                <br>
+                <br>
+                <br>
+              </div> 
+            </div>
+            <div class = "row text-center">
+              
+              <div class="col">
+                <h5>Sky</h5>
+                <br>
+                <img src = "static/images/sky_photo.jfif" class = "circular--square">
+                <br> <br>
+                <a href = "https://www.linkedin.com/in/sky-chen-bb1623171/" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
+              </div>
+              <div class="col">
+                <h5>Solomon</h5>
+                <br>
+                <img src = "static/images/solomon.jpg" class = "circular--square">
+                <br> <br>
+                <a href = "https://www.linkedin.com/in/solomon-chang-161b2b178/" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
+              </div>
+              <div class="col">
+                <h5>Gabe</h5>
+                <br>
+                <img src = "static/images/gabe_photo.jfif" class = "circular--square">
+                <br> <br>
+                <a href = "https://www.linkedin.com/in/gabriel-garfinkel/" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
+              </div>
+              <div class="col">
+                <h5>Alex</h5>
+                <br>
+                <img src = "static/images/alex_square.jpg" class = "circular--square">
+                <br> <br>
+                <a href = "https://www.linkedin.com/in/alexander-hsia" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
+              </div>
+              <div class="col">
+                <h5>Eric</h5>
+                <br>
+                <img src = "static/images/eric_photo.jfif" class = "circular--square">
+                <br> <br>
+                <a href = "https://www.linkedin.com/in/ericlian419/" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
+              </div>
+            </div>
+
+            <!-- Thanks to Sabrina as well, for helping to process some of the datasets. -->
+              <!-- <div class="col">
+                <h5>Sabrina</h5>
+                 <a href = "https://www.linkedin.com/in/sabrina-tobar-thommel/">Sabrina Tobar Thommel</a>
+
+              </div> -->
+
+            <div class = "row text-center">
+              <div class = "column">
+                <br>
+                <br>
+                <a href = "https://github.com/ggarfink/ggarfink.github.io" class="fab fa-github fa-5x" style = "text-decoration:none"></a>
+              </div>
+            </div>
+          </div>
+        </body>
+      </div>
 </html>
